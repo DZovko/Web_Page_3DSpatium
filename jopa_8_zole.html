@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="slike/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Spatium</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="wrap">
+        <a href="#top" class="logo">
+          <div class="logo-text">
+            <img src="slike/favicon.svg" alt="Logo" class="small-logo" />
+          
+          3D Spatium</div></a
+        >
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#usluge">Što radimo</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+          <li class="nav-cta-mobile">
+            <a href="#kontakt" class="btn btn-primary">Zatraži ponudu</a>
+          </li>
+        </ul>
+        <div class="nav-cta">
+          <a href="#kontakt" class="btn btn-primary">Zatraži ponudu</a>
+          <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Otvori izbornik"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <!-- Dodana klasa hero-content da je lakše ciljamo s order svojstvom -->
+          <div class="hero-content">
+            <span class="eyebrow">Za male i srednje tvrtke</span>
+            <h1>Radimo stvari <em>koje se vide</em> i koje rade posao.</h1>
+            <p class="lead">
+              Spatium je firmetina koja vase ideje pretvara u vizije — bez
+              suvišnih fraza, samo konkretan rad i jasna komunikacija.
+            </p>
+            <div class="hero-actions">
+              <a href="#kontakt" class="btn btn-primary"
+                >Zatraži besplatnu ponudu</a
+              >
+              <a href="#portfolio" class="btn btn-ghost">Pogledaj portfolio</a>
+            </div>
+          </div>
+          <div class="hero-visual reveal">
+            <img src="slike/hero.jpg" alt="Prikaz tima pri radu" />
+          </div>
+        </div>
+      </section>
+
+      <!-- STO RADIMO -->
+      <section class="usluge alt-bg" id="usluge">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="eyebrow">Što radimo</span>
+            <h2>Tri-četiri stvari u kojima smo stvarno dobri.</h2>
+            <p>
+              Ne radimo od svega pomalo — fokusirani smo na ono što najviše
+              utječe na to kako vas klijenti doživljavaju.
+            </p>
+          </div>
+          <div class="feature-grid">
+            <div class="feature-card reveal">
+              <div class="fi">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                  <path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12" />
+                </svg>
+              </div>
+              <h3>Web dizajn i razvoj</h3>
+              <p>
+                Izrađujemo brze, moderne stranice koje dobro izgledaju na svakom
+                uređaju i lako se održavaju.
+              </p>
+            </div>
+            <div class="feature-card reveal">
+              <div class="fi">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                  <circle cx="12" cy="12" r="8" />
+                  <path d="M12 8v4l3 2" />
+                </svg>
+              </div>
+              <h3>Brendiranje i dizajn</h3>
+              <p>
+                Od loga do cijelog vizualnog identiteta — gradimo izgled kojim
+                ćete se rado predstavljati klijentima.
+              </p>
+            </div>
+            <div class="feature-card reveal">
+              <div class="fi">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                  <path d="M3 17l6-6 4 4 8-8" />
+                  <path d="M15 7h6v6" />
+                </svg>
+              </div>
+              <h3>Digitalni marketing</h3>
+              <p>
+                Pomažemo da vas prava publika pronađe, uz kampanje koje redovito
+                mjerimo i optimiziramo.
+              </p>
+            </div>
+            <div class="feature-card reveal">
+              <div class="fi">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                  <path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z" />
+                </svg>
+              </div>
+              <h3>Podrška i održavanje</h3>
+              <p>
+                Nakon lansiranja ostajemo uz vas — redovita ažuriranja,
+                sigurnosne kopije i brza podrška.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section class="portfolio" id="portfolio">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="eyebrow">Portfolio</span>
+            <h2>Nešto od onoga na čemu smo radili.</h2>
+            <p>
+              Manji izbor projekata — od web stranica do potpunih vizualnih
+              identiteta.
+            </p>
+          </div>
+          <div class="portfolio-grid">
+            <div class="pf-card reveal">
+              <div class="pf-img">
+                <img
+                  src="slike/projekt1/glavna.jpeg"
+                  data-extra="slike/projekt1/dodatna1.jpeg,slike/projekt1/dodatna2.jpg,slike/projekt1/dodatna3.jpg"
+                  alt="Projekt Fjord Studio"
+                /><!-- KADA DODAJES SLIKU SAMO TU UPISES JOS ADRESU TE SLIKE-->
+              </div>
+              <div class="pf-body">
+                <span class="pf-tag">Web dizajn</span>
+                <h3>Fjord Studio</h3>
+              </div>
+            </div>
+            <div class="pf-card reveal">
+              <div class="pf-img">
+                <img
+                  src="slike/projekt2/glavna.jpg"
+                  data-extra="slike/projekt2/dodatna1.jpg,slike/projekt2/dodatna2.jpg"
+                  alt="Projekt Nordica Coffee"
+                />
+              </div>
+              <div class="pf-body">
+                <span class="pf-tag">Brendiranje</span>
+                <h3>Nordica Coffee</h3>
+              </div>
+            </div>
+            <div class="pf-card reveal">
+              <div class="pf-img">
+                <img
+                  src="slike/projekt3/glavna.jpg"
+                  data-extra="slike/projekt3/dodatna1.jpg,slike/projekt3/dodatna2.jpg"
+                  alt="Projekt Vantage Consulting"
+                />
+              </div>
+              <div class="pf-body">
+                <span class="pf-tag">Web razvoj</span>
+                <h3>Vantage Consulting</h3>
+              </div>
+            </div>
+            <div class="pf-card reveal">
+              <div class="pf-img">
+                <img
+                  src="slike/projekt4/glavna.jpg"
+                  data-extra="slike/projekt4/dodatna1.jpg,slike/projekt4/dodatna2.jpg"
+                  alt="Projekt Solara Wellness"
+                />
+              </div>
+              <div class="pf-body">
+                <span class="pf-tag">Marketing kampanja</span>
+                <h3>Solara Wellness</h3>
+              </div>
+            </div>
+            <div class="pf-card reveal">
+              <div class="pf-img">
+                <img
+                  src="slike/projekt5/glavna.jpg"
+                  data-extra="slike/projekt5/dodatna1.jpg,slike/projekt5/dodatna2.jpg"
+                  alt="Projekt Kutak Bookstore"
+                />
+              </div>
+              <div class="pf-body">
+                <span class="pf-tag">Brendiranje</span>
+                <h3>Kutak Bookstore</h3>
+              </div>
+            </div>
+            <div class="pf-card reveal">
+              <div class="pf-img">
+                <img
+                  src="slike/projekt6/glavna.jpg"
+                  data-extra="slike/projekt6/dodatna1.jpg,slike/projekt6/dodatna2.jpg"
+                  alt="Projekt Metro Fit"
+                />
+              </div>
+              <div class="pf-body">
+                <span class="pf-tag">Web dizajn</span>
+                <h3>Metro Fit</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KONTAKT -->
+      <section class="kontakt alt-bg" id="kontakt">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="eyebrow">Kontakt</span>
+            <h2>Javite nam se.</h2>
+            <p>
+              Ispunite formu ili nam pišite izravno na mail — javljamo se u roku
+              od jednog radnog dana.
+            </p>
+          </div>
+          <div class="kontakt-grid">
+            <form class="kform reveal" id="kontaktForm"  action="https://formspree.io/f/xrenrpor"
+  method="POST">
+              <div>
+                <label for="ime">Ime i prezime</label>
+                <input
+                  type="text"
+                  id="ime"
+                  name="ime"
+                  placeholder="Vaše ime"
+                  required
+                />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="[email protected]"
+                  required
+                />
+              </div>
+              <div>
+                <label for="poruka">Poruka</label>
+                <textarea
+                  id="poruka"
+                  name="poruka"
+                  placeholder="Recite nam nešto o projektu..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" id="submit-btn">
+                Pošalji poruku
+              </button>
+              <p id="form-status"></p>
+            </form>
+            <div class="kinfo reveal">
+              <h3>Kontakt podaci</h3>
+              <div class="kinfo-row">
+                <div class="kinfo-ic">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                    <path d="M3 6l9 7 9-7M3 6h18v12H3z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="kinfo-label">Email</div>
+                  <div class="kinfo-value">joisp.mihaljevic@3dspatium.hr</div>
+                </div>
+              </div>
+
+              <div class="kinfo-row">
+                <div class="kinfo-ic">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                    <path
+                      d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"
+                    />
+                    <circle cx="12" cy="9" r="2.5" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="kinfo-label">Adresa</div>
+                  <div class="kinfo-value">Osijek, Hrvatska</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap foot-wrap">
+        <div class="foot-copy">© 2026 3D Spatium. Sva prava pridržana.</div>
+        <div class="foot-links">
+          <a href="#">Uvjeti</a>
+          <a href="#">Privatnost</a>
+          <a href="#top">Na vrh</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- POPUP GALERIJA (MODAL) -->
+    <div id="galleryModal" class="modal-gallery">
+      <span class="modal-close" id="closeGallery">&times;</span>
+      <span class="modal-nav modal-prev" id="prevGallery">&#10094;</span>
+      <img class="modal-content" id="modalImg" alt="Prikaz portfolija" />
+      <span class="modal-nav modal-next" id="nextGallery">&#10095;</span>
+      <div class="modal-caption" id="modalCaption"></div>
+    </div>
+    <script src="myscript.js"></script>
+  </body>
+</html>
