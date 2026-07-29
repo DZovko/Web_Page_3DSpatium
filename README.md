@@ -22,3 +22,10 @@ HTML5 / CSS3 / vanilla JavaScript — no frameworks, no build tools
 Google Fonts (Open Sans)
 Formspree for form handling
 Hosted via cPanel (see .cpanel.yml)
+
+
+## License
+
+© 2026 3D Spatium. All rights reserved.
+This repository contains the proprietary source code for the 3D Spatium website. 
+No part of this code may be copied, reused, or redistributed without permission.
