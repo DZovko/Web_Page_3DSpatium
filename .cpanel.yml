@@ -7,3 +7,5 @@ deployment:
     - /bin/cp styles.css $DEPLOYPATH
     - /bin/cp myscript.js $DEPLOYPATH
     - /bin/cp -R slike $DEPLOYPATH
+    - /bin/cp robots.txt $DEPLOYPATH
+    - /bin/cp sitemap.xml $DEPLOYPATH
