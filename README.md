@@ -22,16 +22,3 @@ HTML5 / CSS3 / vanilla JavaScript — no frameworks, no build tools
 Google Fonts (Open Sans)
 Formspree for form handling
 Hosted via cPanel (see .cpanel.yml)
-
-Project Structure
-Web_Page_3DSpatium/
-├── .cpanel.yml       # cPanel deployment configuration
-├── .vscode/          # editor settings
-├── slike/            # images (favicon, portfolio photos, OG image)
-├── index.html        # page markup, SEO tags, structured data
-├── styles.css        # all styling
-├── myscript.js       # nav toggle, scroll reveal, lightbox gallery, form handling
-├── robots.txt
-├── sitemap.xml
-├── LICENSE            # MIT
-└── README.md
