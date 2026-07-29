@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/dspatiumhr/public_html/
+
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp styles.css $DEPLOYPATH
+    - /bin/cp myscript.js $DEPLOYPATH
+    - /bin/cp -R slike $DEPLOYPATH
