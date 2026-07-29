@@ -347,4 +347,11 @@
     .portfolio-grid{grid-template-columns:1fr;}
     
     .modal-nav { font-size: 30px; padding: 8px; }
+
+    .eyebrow-portfolio
+  { display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--sans); font-size:55px; letter-spacing:0.14em;
+    color:var(--brand); 
+
+  }
   }
