@@ -13,12 +13,23 @@
       content="Izrađujemo fotorealistične 3D vizualizacije, rendere kuća i stanova, interijere, eksterijere i virtualne šetnje. Studio iz Osijeka."
     />
     <link rel="stylesheet" href="styles.css" />
+    <!-- If JS is unavailable, .reveal elements must not stay invisible forever (see styles.css) -->
+    <noscript>
+      <style>
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+
     <!--SEO DIO-->
     <meta name="geo.region" content="HR-14" />
     <meta name="geo.placename" content="Osijek" />
@@ -63,11 +74,13 @@
             "@type": ["LocalBusiness", "ProfessionalService"],
             "@id": "https://3dspatium.hr/#business",
             "name": "3D Spatium",
+
             "logo": "https://3dspatium.hr/slike/favicon.svg",
             "url": "https://3dspatium.hr/",
+
             "email": "josip.mihaljevic@3dspatium.hr",
             "priceRange": "€€",
-            "description": "3D Spatium izrađuje fotorealistične 3D vizualizacije, arhitektonske rendere i virtualne šetnje kroz stambene i poslovne prostore u Osijeku i cijeloj Hrvatskoj.",
+            "description": "3D Spatium izrađuje fotorealistične 3D vizualizacije, arhitektonske renderE i virtualne šetnje kroz stambene i poslovne prostore u Osijeku i cijeloj Hrvatskoj.",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Osijek",
@@ -80,14 +93,8 @@
               "longitude": 18.6955
             },
             "areaServed": [
-              {
-                "@type": "City",
-                "name": "Osijek"
-              },
-              {
-                "@type": "Country",
-                "name": "Hrvatska"
-              }
+              { "@type": "City", "name": "Osijek" },
+              { "@type": "Country", "name": "Hrvatska" }
             ],
             "sameAs": [],
             "makesOffer": [
@@ -123,18 +130,15 @@
             "url": "https://3dspatium.hr/",
             "name": "3D Spatium",
             "inLanguage": "hr-HR",
-            "publisher": {
-              "@id": "https://3dspatium.hr/#business"
-            }
+            "publisher": { "@id": "https://3dspatium.hr/#business" }
           },
           {
             "@type": "CreativeWork",
             "name": "3D render obiteljske kuće",
-            "creator": {
-              "@id": "https://3dspatium.hr/#business"
-            },
+            "creator": { "@id": "https://3dspatium.hr/#business" },
             "about": "Arhitektonska 3D vizualizacija obiteljske kuće s walkthrough prikazom"
           },
+
           {
             "@type": "FAQPage",
             "mainEntity": [
@@ -159,7 +163,7 @@
                 "name": "Kako izgleda proces 3D renderiranja?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Proces kreće od nacrta prostora, zatim izrada 3D modela, postavljanje materijala i osvjetljenja te generiranje fotorealističnih rendera prema željama klijenta."
+                  "text": "Proces kreće od nacrta prostora, zatim izrada 3D modela, postavljanje materijala i osvjetljenja te generiranje fotorealističnih renderA prema željama klijenta."
                 }
               },
               {
@@ -181,14 +185,18 @@
       <nav class="wrap">
         <a href="#top" class="logo">
           <div class="logo-text">
-            <img src="slike/favicon.svg" alt="Logo" class="small-logo" />
-
+            <img
+              src="slike/favicon.svg"
+              alt="3D Spatium logo"
+              class="small-logo"
+            />
             3D Spatium
-          </div></a
-        >
+          </div>
+        </a>
         <ul class="nav-links" id="navLinks">
-          <li><a href="#usluge">Što radimo</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#proces">Proces</a></li>
+          <li><a href="#onama">O nama</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
           <li class="nav-cta-mobile">
             <a href="#kontakt" class="btn btn-primary">Zatraži ponudu</a>
@@ -213,44 +221,205 @@
       <!-- HERO -->
       <section class="hero">
         <div class="wrap hero-grid">
-          <!-- Dodana klasa hero-content da je lakše ciljamo s order svojstvom -->
           <div class="hero-content">
-            <span class="eyebrow">Dobrodošli</span>
-            <h1>
-              Od nacrta do stvarnosti,
-              <em>stvaramo fotorealistične 3D prikaze</em> vašeg doma koji vam
-              omogućuju da doživite prostor prije realizacije.
-            </h1>
+            <span class="eyebrow">3D vizualizacija · Osijek</span>
+            <h1>Doživite svoj prostor <em>prije realizacije.</em></h1>
             <p class="lead">
-              U 3D Spatiumu izrađujemo vrhunske realistične rendere, animacije i
-              virtualne šetnje kroz vaše buduće prostore, omogućujući vam da
-              doživite svaki detalj projekta prije nego što postane stvarnost.
-              Svakom projektu pristupamo individualno, uz otvorenu komunikaciju
-              i potpunu posvećenost vašim željama. Naš cilj nije samo prikazati
-              prostor, već prenijeti vašu viziju i stvoriti vizualizaciju koja
-              izgleda upravo onako kako ste zamislili. Vaš projekt zaslužuje
-              više od nacrta, zaslužuje da ga vidite.
+              Izrađujemo fotorealistične 3D rendere i virtualne šetnje za
+              obiteljske kuće, stanove i poslovne prostore. Osobno, od prve
+              skice do finalnog kadra. Za investitore, vlasnike i arhitekte koji
+              žele vidjeti svoj prostor baš onako kako su ga zamislili.
             </p>
             <div class="hero-actions">
               <a href="#kontakt" class="btn btn-primary"
-                >Zatraži besplatnu ponudu</a
+                >Besplatno zatraži ponudu</a
               >
               <a href="#portfolio" class="btn btn-ghost">Pogledaj portfolio</a>
             </div>
           </div>
+          <!-- IMAGE-PENDING: replace with the strongest available render (recommend 1600x1200+, WebP).
+               Hidden on mobile (<=900px) — added nothing under the hero text there. -->
+          <!-- Space is reserved via CSS aspect-ratio (see .hero-visual) so swapping in the
+               real render won't cause a layout jump. Once the real file lands, also add
+               width/height attributes matching its natural pixel size and consider
+               fetchpriority="high" since this is the likely LCP element. -->
           <div class="hero-visual reveal">
-            <img src="slike/favicon.svg" alt="3d vizualizacija kuće" />
+            <img
+              src="slike/favicon.svg"
+              alt="Fotorealistična 3D vizualizacija kuće"
+              width="800"
+              height="600"
+            />
           </div>
         </div>
       </section>
 
-      <!-- STO RADIMO -->
-      <section class="usluge alt-bg" id="usluge">
+      <!-- PORTFOLIO — moved directly under hero: proof before claims -->
+      <section class="portfolio" id="portfolio">
         <div class="wrap">
           <div class="section-head reveal">
-            <h2>Stvari u kojima smo stvarno dobri.</h2>
+            <span class="eyebrow-portfolio">Portfolio</span>
+            <h2>Odabir dosadašnjih radova</h2>
+            <p>
+              Svaki projekt u nastavku rađen je individualno, u suradnji s
+              klijentom od prve ideje do finalnog rendera.
+            </p>
           </div>
-          <div class="feature-grid">
+          <!-- IMAGE-PENDING: placeholder images below (favicon reused) until client delivers real renders -->
+          <div class="portfolio-grid">
+            <div class="pf-card reveal">
+              <div class="pf-img">
+                <img
+                  src="slike/projekt1/glavna.jpeg"
+                  data-extra="slike/projekt1/dodatna1.jpeg,slike/projekt1/dodatna2.jpg,slike/projekt1/dodatna3.jpg"
+                  alt="Fjord Studio – 3D vizualizacija obiteljske kuće s virtualnom šetnjom"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
+              </div>
+              <div class="pf-body">
+                <span class="pf-tag">Obiteljska kuća</span>
+                <h3>Fjord Studio</h3>
+              </div>
+            </div>
+            <div class="pf-card reveal">
+              <div class="pf-img">
+                <img
+                  src="slike/projekt2/glavna.jpg"
+                  data-extra="slike/projekt2/dodatna1.jpg,slike/projekt2/dodatna2.jpg"
+                  alt="Nordica Coffee – 3D render poslovnog prostora"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
+              </div>
+              <div class="pf-body">
+                <span class="pf-tag">Poslovni prostor</span>
+                <h3>Nordica Coffee</h3>
+              </div>
+            </div>
+            <div class="pf-card reveal">
+              <div class="pf-img">
+                <img
+                  src="slike/projekt3/glavna.jpg"
+                  data-extra="slike/projekt3/dodatna1.jpg,slike/projekt3/dodatna2.jpg"
+                  alt="Vantage Consulting – fotorealistični render moderne stambene zgrade"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
+              </div>
+              <div class="pf-body">
+                <span class="pf-tag">Stambena zgrada</span>
+                <h3>Vantage Consulting</h3>
+              </div>
+            </div>
+            <div class="pf-card reveal">
+              <div class="pf-img">
+                <img
+                  src="slike/projekt4/glavna.jpg"
+                  data-extra="slike/projekt4/dodatna1.jpg,slike/projekt4/dodatna2.jpg"
+                  alt="Solara Wellness – 3D vizualizacija interijera"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
+              </div>
+              <div class="pf-body">
+                <span class="pf-tag">Interijer</span>
+                <h3>Solara Wellness</h3>
+              </div>
+            </div>
+            <div class="pf-card reveal">
+              <div class="pf-img">
+                <img
+                  src="slike/projekt5/glavna.jpg"
+                  data-extra="slike/projekt5/dodatna1.jpg,slike/projekt5/dodatna2.jpg"
+                  alt="Poslovni prostor - arhitektonska vizualizacija"
+                  loading="lazy"
+                />
+              </div>
+              <div class="pf-body">
+                <span class="pf-tag">Poslovni prostor</span>
+                <h3>Kutak Bookstore</h3>
+              </div>
+            </div>
+            <div class="pf-card reveal">
+              <div class="pf-img">
+                <img
+                  src="slike/projekt6/glavna.jpg"
+                  data-extra="slike/projekt6/dodatna1.jpg,slike/projekt6/dodatna2.jpg"
+                  alt="Minimalistički interijer stana - fotorealistični render"
+                  loading="lazy"
+                />
+              </div>
+              <div class="pf-body">
+                <span class="pf-tag">Interijer</span>
+                <h3>Metro Fit</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCES -->
+      <section class="proces alt-bg" id="proces">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="eyebrow">Proces</span>
+            <h2>Kako izgleda suradnja</h2>
+            <p>Dogovor bez nejasnih koraka</p>
+          </div>
+          <div class="proces-grid">
+            <div class="proces-card reveal">
+              <span class="proces-num">01</span>
+              <h3>Konzultacija i ponuda</h3>
+              <p>
+                Pošaljete nacrt, skicu ili opis prostora. Unutar jednog radnog
+                dana javljamo se s okvirnom cijenom i rokom izrade.
+              </p>
+            </div>
+            <div class="proces-card reveal">
+              <span class="proces-num">02</span>
+              <h3>3D modeliranje i izrada</h3>
+              <p>
+                Radimo 3D model prostora, postavljamo materijale, osvjetljenje i
+                kadrove, uz redovita ažuriranja tijekom izrade.
+              </p>
+            </div>
+            <div class="proces-card reveal">
+              <span class="proces-num">03</span>
+              <h3>Finalni render i revizije</h3>
+              <p>
+                Dobivate finalne fotorealistične rendere ili virtualnu šetnju,
+                uz uključene revizije dogovorene u ponudi.
+              </p>
+            </div>
+          </div>
+          <!-- PRICING-PENDING: client hasn't confirmed a public starting price yet. Once confirmed, replace
+               the line below with e.g. "Cijene kreću od 250 EUR po rendera, ovisno o opsegu projekta." -->
+          <p class="proces-note reveal">
+            Cijena i rok izrade ovise o opsegu projekta, javite se za besplatnu,
+            nezobavezujuću ponudu.
+          </p>
+        </div>
+      </section>
+
+      <section class="onama" id="onama">
+        <div class="wrap onama-grid">
+          <div class="section-head reveal onama-head">
+            <span class="eyebrow">O nama</span>
+            <h2>Novi studio, potpuna posvećenost svakom projektu.</h2>
+            <p>
+              3D Spatium je tek osnovani upravo zato svaki projekt tretiramo kao
+              jedinstven. Bez timova, agencijskih slojeva ili prebacivanja
+              projekta s osobe na osobu. Vi razgovarate s osobom koja stvarno
+              radi na vašem prostoru, od prve skice do zadnjeg detalja svjetla
+              na renderu.
+            </p>
+          </div>
+          <div class="onama-cards">
             <div class="feature-card reveal">
               <div class="fi">
                 <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
@@ -260,14 +429,11 @@
                   <path d="M8 9l1.5 1.5L11 8l2 3 1.5-1.5" />
                 </svg>
               </div>
-              <h3><b>Jasna i ažurna komunikacija</b></h3>
+              <h3>Direktna komunikacija</h3>
               <p>
-                <b
-                  >Transparentan proces od prvog kontakta do završnog
-                  rendera.</b
-                >
-                Redovito komuniciramo napredak projekta i uključujemo vas u
-                proces kako bi rezultat bio upravo ono što očekujete.
+                Nema posrednika, izravna komunikacija. Dobivate prave rokove i
+                iskrene odgovore, uz redovita ažuriranja tijekom izrade
+                projekta.
               </p>
             </div>
             <div class="feature-card reveal">
@@ -285,12 +451,11 @@
                   <path d="M12 3v2M12 19v2M3 12h2M19 12h2" />
                 </svg>
               </div>
-              <h3><b>Individualni pristup projektu</b></h3>
+              <h3>Pristup po mjeri projekta</h3>
               <p>
-                <b>Vaša vizija je naš prioritet.</b>
-                Svaki projekt razvijamo u suradnji s klijentom kako bismo
-                osigurali da konačni rezultat odgovara zamišljenom konceptu i
-                željama.
+                Nema dva ista prostora, pa nema ni univerzalnog rješenja. Svaki
+                projekt prilagođavam vašim željama, rokovima i specifičnostima
+                prostora.
               </p>
             </div>
             <div class="feature-card reveal">
@@ -303,143 +468,77 @@
                   <path d="M9.5 12.5l1.5 1.5 3-3" />
                 </svg>
               </div>
-              <h3><b>Poštivanje rokova</b></h3>
+              <h3>Poštivanje rokova</h3>
               <p>
-                <b>Pouzdanost kroz pravovremenu isporuku.</b>
-                Svjesni smo važnosti vremena u svakom projektu. Organiziramo rad
-                tako da dogovorene rokove ispunimo kvalitetno i učinkovito, bez
-                kompromisa na završnom rezultatu.
-              </p>
-            </div>
-            <div class="feature-card reveal">
-              <div class="fi">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
-                  <path d="M4 8a4 4 0 0 1 4-4h4" />
-                  <path d="M20 16a4 4 0 0 1-4 4h-4" />
-                  <path d="M4 8v8a4 4 0 0 0 4 4" />
-                  <path d="M20 16V8a4 4 0 0 0-4-4" />
-                  <path
-                    d="M12 4a4 4 0 0 1 0 8 4 4 0 0 0 0 8"
-                    stroke-dasharray="2 2"
-                  />
-                </svg>
-              </div>
-              <h3><b>Fleksibilan pristup</b></h3>
-              <p>
-                <b>Prilagođavamo se vašim potrebama.</b>
-                Svaki projekt je jedinstven, zato pristupamo individualno i
-                pronalazimo rješenja koja odgovaraju vašim zahtjevima, rokovima
-                i načinu rada.
+                Dogovoreni rok je dogovoreni rok. Rad je organiziran tako da
+                projekte isporučimo na vrijeme, bez kompromisa na kvaliteti
+                finalnog rendera.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- PORTFOLIO -->
-      <section class="portfolio" id="portfolio">
+      <!-- FAQ — previously only in JSON-LD, now visible where visitors actually need it: right before contact -->
+      <section class="faq alt-bg" id="faq">
         <div class="wrap">
           <div class="section-head reveal">
-            <span class="eyebrow-portfolio">Portfolio</span>
-            <h2><b>Naši radovi</b></h2>
+            <span class="eyebrow">Pitanja</span>
+            <h2>Često postavljena pitanja</h2>
           </div>
-          <div class="portfolio-grid">
-            <div class="pf-card reveal">
-              <div class="pf-img">
-                <img
-                  src="slike/projekt1/glavna.jpeg"
-                  data-extra="slike/projekt1/dodatna1.jpeg,slike/projekt1/dodatna2.jpg,slike/projekt1/dodatna3.jpg"
-                  alt="Projekt obiteljske kuće walktrough"
-                  loading="lazy"
-                /><!-- KADA DODAJES SLIKU SAMO TU UPISES JOS ADRESU TE SLIKE-->
-              </div>
-              <div class="pf-body">
-                <span class="pf-tag">29.07.2026</span>
-                <h3>Fjord Studio</h3>
-              </div>
-            </div>
-            <div class="pf-card reveal">
-              <div class="pf-img">
-                <img
-                  src="slike/projekt2/glavna.jpg"
-                  data-extra="slike/projekt2/dodatna1.jpg,slike/projekt2/dodatna2.jpg"
-                  alt="Projekt rendera zgrade"
-                  loading="lazy"
-                />
-              </div>
-              <div class="pf-body">
-                <span class="pf-tag">Brendiranje</span>
-                <h3>Nordica Coffee</h3>
-              </div>
-            </div>
-            <div class="pf-card reveal">
-              <div class="pf-img">
-                <img
-                  src="slike/projekt3/glavna.jpg"
-                  data-extra="slike/projekt3/dodatna1.jpg,slike/projekt3/dodatna2.jpg"
-                  alt="Fotorealistični 3D render moderne stambene zgrade"
-                  loading="lazy"
-                />
-              </div>
-              <div class="pf-body">
-                <span class="pf-tag">Web razvoj</span>
-                <h3>Vantage Consulting</h3>
-              </div>
-            </div>
-            <div class="pf-card reveal">
-              <div class="pf-img">
-                <img
-                  src="slike/projekt4/glavna.jpg"
-                  data-extra="slike/projekt4/dodatna1.jpg,slike/projekt4/dodatna2.jpg"
-                  alt="Projekt Solara Wellness"
-                  loading="lazy"
-                />
-              </div>
-              <div class="pf-body">
-                <span class="pf-tag">Marketing kampanja</span>
-                <h3>Solara Wellness</h3>
-              </div>
-            </div>
-            <div class="pf-card reveal">
-              <div class="pf-img">
-                <img
-                  src="slike/projekt5/glavna.jpg"
-                  data-extra="slike/projekt5/dodatna1.jpg,slike/projekt5/dodatna2.jpg"
-                  alt="Poslovni prostor - arhitektonska vizualizacija"
-                  loading="lazy"
-                />
-              </div>
-              <div class="pf-body">
-                <span class="pf-tag">Brendiranje</span>
-                <h3>Kutak Bookstore</h3>
-              </div>
-            </div>
-            <div class="pf-card reveal">
-              <div class="pf-img">
-                <img
-                  src="slike/projekt6/glavna.jpg"
-                  data-extra="slike/projekt6/dodatna1.jpg,slike/projekt6/dodatna2.jpg"
-                  alt="Minimalistički interijer stana - fotorealistični render"
-                  loading="lazy"
-                />
-              </div>
-              <div class="pf-body">
-                <span class="pf-tag">Web dizajn</span>
-                <h3>Metro Fit</h3>
-              </div>
-            </div>
+          <div class="faq-list reveal">
+            <details class="faq-item">
+              <summary>Koliko košta 3D vizualizacija?</summary>
+              <p>
+                Cijena ovisi o veličini i kompleksnosti prostora, broju rendera
+                i eventualnoj animaciji ili virtualnoj šetnji. Za točnu ponudu
+                potreban je kratak razgovor o projektu, javite se i dobit ćete
+                okvirnu cijenu unutar jednog radnog dana.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Koliko traje izrada rendera kuće?</summary>
+              <p>
+                U prosjeku od nekoliko dana do dva tjedna, ovisno o opsegu
+                projekta i broju traženih kadrova.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Kako izgleda proces 3D renderiranja?</summary>
+              <p>
+                Proces kreće od nacrta ili skice prostora, zatim izrada 3D
+                modela, postavljanje materijala i osvjetljenja, te generiranje
+                finalnih fotorealističnih rendera uz jednu do dvije uključene
+                revizije.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Radite li vizualizacije izvan Osijeka?</summary>
+              <p>
+                Da, cijeli proces radimo online, pa surađujem s klijentima iz
+                cijele Hrvatske bez potrebe za fizičkim sastancima.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Trebam li imati gotov arhitektonski nacrt?</summary>
+              <p>
+                Idealno je imati barem osnovni tlocrt ili skicu prostora. Ako
+                još nemate finalne nacrte, javite se svejedno dogovorit ćemo
+                zajedno što je potrebno za početak.
+              </p>
+            </details>
           </div>
         </div>
       </section>
 
       <!-- KONTAKT -->
-      <section class="kontakt alt-bg" id="kontakt">
+      <section class="kontakt" id="kontakt">
         <div class="wrap">
           <div class="section-head reveal">
             <span class="eyebrow">Kontakt</span>
             <h2>Javite nam se.</h2>
             <p>
-              Ispunite formu ili nam pišite izravno na mail — javljamo se u roku
+              Ispunite formu ili nam pišite izravno na mail, javljamo se u roku
               od jednog radnog dana.
             </p>
           </div>
@@ -466,7 +565,7 @@
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="[email protected]"
+                  placeholder="ime@email.com"
                   required
                 />
               </div>
@@ -479,10 +578,22 @@
                   required
                 ></textarea>
               </div>
+              <!-- Honeypot field: invisible to real users, bots tend to fill every field -->
+              <input
+                type="text"
+                name="_gotcha"
+                tabindex="-1"
+                autocomplete="off"
+                class="hp-field"
+                aria-hidden="true"
+              />
               <button type="submit" class="btn btn-primary" id="submit-btn">
                 Pošalji poruku
               </button>
-              <p id="form-status"></p>
+              <p class="kform-note">
+                Javljamo se u roku od jednog radnog dana.
+              </p>
+              <p id="form-status" role="status" aria-live="polite"></p>
             </form>
             <div class="kinfo reveal">
               <h3>Kontakt podaci</h3>
@@ -494,7 +605,11 @@
                 </div>
                 <div>
                   <div class="kinfo-label">Email</div>
-                  <div class="kinfo-value">josip.mihaljevic@3dspatium.hr</div>
+                  <div class="kinfo-value">
+                    <a href="mailto:josip.mihaljevic@3dspatium.hr"
+                      >josip.mihaljevic@3dspatium.hr</a
+                    >
+                  </div>
                 </div>
               </div>
 
@@ -512,19 +627,30 @@
                   <div class="kinfo-value">Osijek, Hrvatska</div>
                 </div>
               </div>
-              <div class="kinfo-row">
-                <div class="kinfo-ic">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
-                    <path
-                      d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"
-                    />
-                  </svg>
+              <!--
+                PHONE-PENDING: client hasn't confirmed whether phone will be a contact
+                channel, or the real number, yet. Intentionally left OUT of live markup
+                rather than shipped as a placeholder/fake tel: link — a broken phone
+                number is worse than no phone number.
+
+                To re-enable once confirmed, uncomment and replace the number below:
+
+                <div class="kinfo-row">
+                  <div class="kinfo-ic">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                      <path
+                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="kinfo-label">Telefon</div>
+                    <div class="kinfo-value">
+                      <a href="tel:+385XXXXXXXXX">+385 XX XXX XXXX</a>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <div class="kinfo-label">Telefon</div>
-                  <div class="kinfo-value">+385 95 7780 ###</div>
-                </div>
-              </div>
+              -->
             </div>
           </div>
         </div>
@@ -533,21 +659,51 @@
 
     <footer>
       <div class="wrap foot-wrap">
-        <div class="foot-copy">© 2026 3D Spatium. Sva prava pridržana.</div>
+        <div class="foot-copy">
+          © <span id="footYear"></span> 3D Spatium. Sva prava pridržana.
+        </div>
         <div class="foot-links">
-          <a href="#">Uvjeti</a>
-          <a href="#">Privatnost</a>
+          <a href="/uvjeti.html">Uvjeti</a>
+          <a href="/privatnost.html">Privatnost</a>
           <a href="#top">Na vrh</a>
         </div>
       </div>
     </footer>
 
     <!-- POPUP GALERIJA (MODAL) -->
-    <div id="galleryModal" class="modal-gallery">
-      <span class="modal-close" id="closeGallery">&times;</span>
-      <span class="modal-nav modal-prev" id="prevGallery">&#10094;</span>
+    <div
+      id="galleryModal"
+      class="modal-gallery"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Prikaz portfolija"
+      aria-hidden="true"
+    >
+      <span
+        class="modal-close"
+        id="closeGallery"
+        role="button"
+        tabindex="0"
+        aria-label="Zatvori prikaz"
+        >&times;</span
+      >
+      <span
+        class="modal-nav modal-prev"
+        id="prevGallery"
+        role="button"
+        tabindex="0"
+        aria-label="Prethodna slika"
+        >&#10094;</span
+      >
       <img class="modal-content" id="modalImg" alt="Prikaz portfolija" />
-      <span class="modal-nav modal-next" id="nextGallery">&#10095;</span>
+      <span
+        class="modal-nav modal-next"
+        id="nextGallery"
+        role="button"
+        tabindex="0"
+        aria-label="Sljedeća slika"
+        >&#10095;</span
+      >
       <div class="modal-caption" id="modalCaption"></div>
     </div>
     <script src="myscript.js"></script>
