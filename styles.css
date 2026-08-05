@@ -1,11 +1,11 @@
 :root {
-  --ink: #232220;
-  --ink-soft: #6b6660;
-  --ink-faint: #9a948b;
+  --ink: #0a0908;
+  --ink-soft: #22333b;
+  --ink-faint: #22333b;
   --paper: #f6f3ee;
-  --paper-deep: #efeae1;
-  --line: #d9d2c4;
-  --brand: #8b7e6e;
+  --paper-deep: #eae0d5;
+  --line: #eae0d5;
+  --brand: #5e503f;
   --brand-dark: #605b53;
   --radius: 6px;
   --shadow: 0 24px 60px -30px rgba(35, 34, 32, 0.22);
