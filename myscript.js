@@ -89,7 +89,14 @@ const prevBtn = document.getElementById("prevGallery");
 const nextBtn = document.getElementById("nextGallery");
 const portfolioImages = document.querySelectorAll(".pf-img img");
 
-if (galleryModal && modalImg && modalCaption && closeGalleryBtn && prevBtn && nextBtn) {
+if (
+  galleryModal &&
+  modalImg &&
+  modalCaption &&
+  closeGalleryBtn &&
+  prevBtn &&
+  nextBtn
+) {
   let currentGalleryImages = [];
   let currentImageIndex = 0;
   let currentAltText = "";
@@ -223,51 +230,53 @@ const status = document.getElementById("form-status");
 const submitBtn = document.getElementById("submit-btn");
 
 if (form && status && submitBtn) {
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  // Honeypot check: if the hidden "_gotcha" field got filled in, it's almost certainly a bot.
-  // Silently pretend success instead of submitting, so bots don't learn to adapt.
-  const honeypot = form.querySelector('input[name="_gotcha"]');
-  if (honeypot && honeypot.value.trim() !== "") {
-    status.textContent = "Hvala! Poruka je uspješno poslana.";
-    status.style.color = "green";
-    form.reset();
-    return;
-  }
-
-  submitBtn.disabled = true;
-  status.textContent = "";
-
-  const data = new FormData(form);
-
-  try {
-    const response = await fetch("https://formspree.io/f/meeydqgd", {
-      method: "POST",
-      body: data,
-      headers: {
-        Accept: "application/json",
-      },
-    });
-
-    if (response.ok) {
+    // Honeypot check: if the hidden "_gotcha" field got filled in, it's almost certainly a bot.
+    // Silently pretend success instead of submitting, so bots don't learn to adapt.
+    const honeypot = form.querySelector('input[name="_gotcha"]');
+    if (honeypot && honeypot.value.trim() !== "") {
       status.textContent = "Hvala! Poruka je uspješno poslana.";
       status.style.color = "green";
       form.reset();
-    } else {
-      const result = await response.json();
-      if (result.errors) {
-        status.textContent = result.errors.map((err) => err.message).join(", ");
-      } else {
-        status.textContent = "Došlo je do greške. Pokušaj ponovno.";
-      }
-      status.style.color = "red";
+      return;
     }
-  } catch (error) {
-    status.textContent = "Greška u mreži. Provjeri internetsku vezu.";
-    status.style.color = "red";
-  } finally {
-    submitBtn.disabled = false;
-  }
-});
+
+    submitBtn.disabled = true;
+    status.textContent = "";
+
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/meeydqgd", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        status.textContent = "Hvala! Poruka je uspješno poslana.";
+        status.style.color = "green";
+        form.reset();
+      } else {
+        const result = await response.json();
+        if (result.errors) {
+          status.textContent = result.errors
+            .map((err) => err.message)
+            .join(", ");
+        } else {
+          status.textContent = "Došlo je do greške. Pokušaj ponovno.";
+        }
+        status.style.color = "red";
+      }
+    } catch (error) {
+      status.textContent = "Greška u mreži. Provjeri internetsku vezu.";
+      status.style.color = "red";
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
 }
