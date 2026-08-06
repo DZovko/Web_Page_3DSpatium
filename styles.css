@@ -133,19 +133,7 @@ em {
   align-items: center;
   gap: 8px;
   font-family: var(--sans);
-  font-size: 0.7em;
-  letter-spacing: 0.14em;
-  color: var(--brand);
-  font-weight: 500;
-}
-
-/* Fixed: was 55px, clashing badly with the rest of the page scale. Now matches .eyebrow. */
-.eyebrow-portfolio {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--sans);
-  font-size: 15px;
+  font-size: 0.8em;
   letter-spacing: 0.14em;
   color: var(--brand);
   font-weight: 500;
@@ -307,7 +295,7 @@ nav.wrap {
   overflow: hidden;
   display: flex;
   align-items: center;
-  font-size: 2dvh;
+  font-size: clamp(15px, 2dvh, 30px);
 }
 .hero-bg-img {
   position: absolute;
@@ -324,7 +312,7 @@ nav.wrap {
   object-fit: cover;
 }
 .hero-content {
-  color: var(--ink);
+  color: var(--paper-deep);
   position: relative;
   z-index: 2;
   padding: 30dvh var(--sp-6) var(--sp-6);
@@ -340,7 +328,7 @@ nav.wrap {
 }
 .hero p.lead {
   font-size: 1em;
-  color: var(--ink);
+  color: var(--paper-deep);
   max-width: 46ch;
   margin-bottom: var(--sp-7);
 }
@@ -351,6 +339,7 @@ nav.wrap {
   margin-bottom: 5dvh;
   flex-wrap: wrap;
   font-size: 0.8em;
+  gap: 5dvh;
 }
 .hero-actions .btn {
   flex: 1 1 0;
@@ -368,17 +357,18 @@ section {
   position: relative;
 }
 .section-head {
+  font-size: clamp(15px, 1.5dvh, 30px);
   max-width: 640px;
   margin-bottom: var(--sp-8);
 }
 .section-head h2 {
-  font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+  font-size: 1.8em;
   margin-top: var(--sp-3);
 }
 .section-head p {
   color: var(--ink-soft);
   margin-top: var(--sp-3);
-  font-size: 15.5px;
+  font-size: 1em;
 }
 .alt-bg {
   background: var(--paper-deep);
@@ -467,8 +457,8 @@ section {
   padding: var(--sp-4) var(--sp-5) var(--sp-5);
 }
 .pf-tag {
+  font-size: 0.8em;
   font-family: var(--sans);
-  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--brand);
@@ -476,7 +466,7 @@ section {
   display: block;
 }
 .pf-body h3 {
-  font-size: 16px;
+  font-size: 1.2em;
   font-weight: 500;
 }
 
@@ -554,7 +544,6 @@ section {
 .onama-head p {
   color: var(--ink-soft);
   margin-top: var(--sp-4);
-  font-size: 15.5px;
   max-width: 44ch;
 }
 .onama-cards {
