@@ -7,6 +7,7 @@
   --line: #eae0d5;
   --brand: #5e503f;
   --brand-dark: #605b53;
+
   --radius: 6px;
   --shadow: 0 24px 60px -30px rgba(35, 34, 32, 0.22);
   --serif: "Fraunces", serif;
@@ -23,6 +24,9 @@
   --sp-7: 48px;
   --sp-8: 64px;
   --sp-9: 96px;
+
+  --logo-ratio: 0.73;
+  --header-h: 7dvh;
 }
 
 * {
@@ -129,7 +133,7 @@ em {
   align-items: center;
   gap: 8px;
   font-family: var(--sans);
-  font-size: 15px;
+  font-size: 0.7em;
   letter-spacing: 0.14em;
   color: var(--brand);
   font-weight: 500;
@@ -153,6 +157,7 @@ header {
   top: 0;
   z-index: 60;
   border-bottom: 1px solid var(--line);
+  height: var(--header-h);
 }
 header::before {
   content: "";
@@ -167,7 +172,7 @@ header::before {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 20px;
+  font-size: 2dvh;
   font-weight: bold;
 }
 .small-logo {
@@ -178,7 +183,7 @@ nav.wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: var(--header-h);
 }
 .nav-links {
   display: flex;
@@ -211,7 +216,7 @@ nav.wrap {
   padding: 12px 24px;
   border-radius: var(--radius);
   font-weight: 500;
-  font-size: 13.5px;
+  font-size: 1em;
   letter-spacing: 0.03em;
   cursor: pointer;
   border: 1px solid transparent;
@@ -229,7 +234,14 @@ nav.wrap {
   color: var(--paper);
 }
 .btn-primary:hover {
-  background: var(--brand);
+  background: var(--ink-soft);
+}
+.btn-secondary {
+  background: var(--paper);
+  color: var(--ink);
+}
+.btn-secondary:hover {
+  background: var(--paper-deep);
 }
 .btn-ghost {
   color: var(--ink-soft);
@@ -286,29 +298,63 @@ nav.wrap {
 
 /* ---------- HERO ---------- */
 .hero {
-  padding: var(--sp-9) 0 var(--sp-8);
-}
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: var(--sp-8);
+  position: relative;
+  padding-top: var(--header-h);
+  height: calc(100dvh - var(--header-h));
+  background-image: url("slike/temp/WhisperTFR.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
   align-items: center;
+  font-size: 2dvh;
+}
+.hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100dvh - var(--header-h));
+  aspect-ratio: var(--logo-ratio);
+  z-index: 1;
+}
+.hero-bg-img img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+.hero-content {
+  color: var(--ink);
+  position: relative;
+  z-index: 2;
+  padding: 30dvh var(--sp-6) var(--sp-6);
+  height: calc(100dvh - var(--header-h));
+  aspect-ratio: var(--logo-ratio);
+  display: flex;
+  flex-direction: column;
 }
 .hero h1 {
-  font-size: clamp(2.1rem, 4.6vw, 3.4rem);
+  font-size: 3em;
   line-height: 1.12;
   margin: var(--sp-5) 0 var(--sp-5);
 }
 .hero p.lead {
-  font-size: 17px;
-  color: var(--ink-soft);
+  font-size: 1em;
+  color: var(--ink);
   max-width: 46ch;
   margin-bottom: var(--sp-7);
 }
 .hero-actions {
   display: flex;
-  gap: var(--sp-4);
+  justify-content: space-between;
+  margin-top: auto;
+  margin-bottom: 5dvh;
   flex-wrap: wrap;
+  font-size: 0.8em;
+}
+.hero-actions .btn {
+  flex: 1 1 0;
+  text-align: center;
 }
 .hero-visual img {
   width: 100%;
