@@ -293,17 +293,16 @@ nav.wrap {
   background-image: url("slike/glavna.jpeg");
   background-size: cover;
   background-position: center;
-  overflow: hidden;
   display: flex;
   align-items: center;
-  font-size: clamp(15px, 2dvh, 30px);
+  font-size: clamp(10px, 2dvh, 30px);
 }
 .hero-bg-img {
   position: absolute;
   top: 0;
   left: 0;
   height: calc(100dvh - var(--header-h));
-  aspect-ratio: var(--logo-ratio);
+  aspect-ratio: clamp(calc(100dvw / (100dvh - var(--header-h)), var(--logo-ratio)));
   z-index: 1;
 }
 .hero-bg-img img {
@@ -316,14 +315,14 @@ nav.wrap {
   color: var(--paper-deep);
   position: relative;
   z-index: 2;
-  padding: 30dvh var(--sp-6) var(--sp-6);
+  padding: 22dvh 3dvh 3dvh 3dvh;
   height: calc(100dvh - var(--header-h));
-  aspect-ratio: var(--logo-ratio);
+  aspect-ratio: clamp(calc(100dvw / (100dvh - var(--header-h)), var(--logo-ratio)));
   display: flex;
   flex-direction: column;
 }
 .hero h1 {
-  font-size: 3em;
+  font-size: 2.5em;
   line-height: 1.12;
   margin: var(--sp-5) 0 var(--sp-5);
 }
@@ -331,16 +330,17 @@ nav.wrap {
   font-size: 1em;
   color: var(--paper-deep);
   max-width: 46ch;
+  margin-top: auto;
   margin-bottom: var(--sp-7);
 }
 .hero-actions {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   margin-top: auto;
   margin-bottom: 5dvh;
   flex-wrap: wrap;
   font-size: 0.8em;
-  gap: 5dvh;
+  gap: 2dvh;
 }
 .hero-actions .btn {
   flex: 1 1 0;
@@ -935,7 +935,7 @@ footer {
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 800px) {
   .nav-links {
     position: fixed;
     top: 72px;

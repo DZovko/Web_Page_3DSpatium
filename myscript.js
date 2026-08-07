@@ -32,7 +32,7 @@ if (menuToggle && navLinks && navBackdrop) {
     .querySelectorAll("a")
     .forEach((a) => a.addEventListener("click", closeMenu));
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 680) closeMenu();
+    if (window.innerWidth > 800) closeMenu();
   });
   // ESC closes the mobile menu too, not just the gallery modal
   document.addEventListener("keydown", (e) => {
