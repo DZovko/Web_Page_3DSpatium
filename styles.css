@@ -289,7 +289,7 @@ nav.wrap {
   position: relative;
   padding-top: var(--header-h);
   height: calc(100dvh - var(--header-h));
-  background-image: url("slike/temp/WhisperTFR.jpg");
+  background-image: url("slike/glavna.jpeg");
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -526,6 +526,7 @@ section {
   font-size: 14px;
   color: var(--ink-faint);
   text-align: center;
+  text-decoration: underline;
 }
 
 /* ---------- O NAMA ---------- */
