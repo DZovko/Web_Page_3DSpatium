@@ -188,10 +188,9 @@
       }
     </script>
   </head>
-  <body>
+  <body  id="top">
     <header>
       <nav class="wrap">
-        <a href="#top" class="logo">
           <div class="logo-text">
             <img
               src="slike/favicon.svg"
@@ -225,13 +224,15 @@
     </header>
     <div class="nav-backdrop" id="navBackdrop"></div>
 
-    <main id="top">
+    <main>
       <!-- HERO -->
       <section class="hero">
-        <div class="wrap hero-grid">
+          <div class="hero-bg-img">
+            <img src="slike/logo-pozadina-alt.svg" alt="Logo">
+          </div>
           <div class="hero-content">
-            <span class="eyebrow">3D vizualizacija · Osijek</span>
-            <h1>Doživite svoj prostor <em>prije realizacije.</em></h1>
+            <h1>Doživite <br> svoj prostor <br><em>prije realizacije.</em></h1>
+            <br>
             <p class="lead">
               Izrađujemo fotorealistične 3D rendere i virtualne šetnje za
               obiteljske kuće, stanove i poslovne prostore. Osobno, od prve
@@ -242,22 +243,8 @@
               <a href="#kontakt" class="btn btn-primary"
                 >Besplatno zatraži ponudu</a
               >
-              <a href="#portfolio" class="btn btn-ghost">Pogledaj portfolio</a>
+              <a href="#portfolio" class="btn btn-secondary">Pogledaj portfolio</a>
             </div>
-          </div>
-          <!-- IMAGE-PENDING: replace with the strongest available render (recommend 1600x1200+, WebP).
-               Hidden on mobile (<=900px) — added nothing under the hero text there. -->
-          <!-- Space is reserved via CSS aspect-ratio (see .hero-visual) so swapping in the
-               real render won't cause a layout jump. Once the real file lands, also add
-               width/height attributes matching its natural pixel size and consider
-               fetchpriority="high" since this is the likely LCP element. -->
-          <div class="hero-visual reveal">
-            <img
-              src="slike/favicon.svg"
-              alt="Fotorealistična 3D vizualizacija kuće"
-              width="800"
-              height="600"
-            />
           </div>
         </div>
       </section>
@@ -266,7 +253,7 @@
       <section class="portfolio" id="portfolio">
         <div class="wrap">
           <div class="section-head reveal">
-            <span class="eyebrow-portfolio">Portfolio</span>
+            <span class="eyebrow">Portfolio</span>
             <h2>Odabir dosadašnjih radova</h2>
             <p>
               Svaki projekt u nastavku rađen je individualno, u suradnji s
@@ -600,7 +587,7 @@
                 aria-hidden="true"
               />
               <button type="submit" class="btn btn-primary" id="submit-btn">
-                Pošalji poruku
+                Zatraži ponudu
               </button>
               <p class="kform-note">
                 Javljamo se u roku od jednog radnog dana.
