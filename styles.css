@@ -10,8 +10,8 @@
 
   --radius: 6px;
   --shadow: 0 24px 60px -30px rgba(35, 34, 32, 0.22);
-  --serif: "Fraunces", serif;
-  --sans: "Inter", sans-serif;
+  --serif: "Serif", serif;
+  --sans: "Open Sans", sans-serif;
   --maxw: 1140px;
   --gutter: 24px;
 
@@ -27,8 +27,8 @@
 
   --logo-ratio: 0.73;
 
-  --header-h: 7dvh;
-  --hero-h: 93dvh;
+  --header-h: 7svh;
+  --hero-h: calc(100svh - var(--header-h));
   --hero-logo-w: min(calc(var(--logo-ratio) * var(--hero-h) - 7dvw), 100dvw);
 }
 
@@ -163,7 +163,7 @@ header::before {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 2dvh;
+  font-size: 2svh;
   font-weight: bold;
 }
 .small-logo {
@@ -235,11 +235,11 @@ nav.wrap {
   color: var(--paper-deep)
 }
 .btn-secondary {
-  background: var(--paper);
+  background: var(--paper-deep);
   color: var(--ink);
 }
 .btn-secondary:hover {
-  background: var(--paper-deep);
+  background: var(--paper);
 }
 .btn-ghost {
   color: var(--ink-soft);
@@ -283,7 +283,7 @@ nav.wrap {
 .nav-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(35, 34, 32, 0.45);
+  background: var(--paper);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
@@ -304,10 +304,11 @@ nav.wrap {
   background-position: center;
   display: flex;
   align-items: center;
-  font-size: clamp(10px, 2dvh, 30px);
+  font-size: clamp(10px, 2svh, 30px);
 }
 .hero-bg-img {
   position: absolute;
+  opacity: 0.92;
   top: 0;
   left: 0;
   height: var(--hero-h);
@@ -324,7 +325,7 @@ nav.wrap {
   color: var(--paper-deep);
   position: relative;
   z-index: 2;
-  padding: 22dvh 3dvh 3dvh 3dvh;
+  padding: 22svh 3svh 3svh 3svh;
   height: var(--hero-h);
   width: var(--hero-logo-w);
   display: flex;
@@ -342,13 +343,15 @@ nav.wrap {
   margin-bottom: var(--sp-7);
 }
 .hero-actions {
+  max-width: 30ch;
   display: flex;
   flex-direction: column;
   margin-top: auto;
-  margin-bottom: 5dvh;
+  margin-left: auto;
+  margin-bottom: 5svh;
   flex-wrap: wrap;
   font-size: 0.8em;
-  gap: 2dvh;
+  gap: 2svh;
 }
 .hero-actions .btn {
   flex: 1 1 0;
@@ -365,7 +368,7 @@ section {
   position: relative;
 }
 .section-head {
-  font-size: clamp(15px, 1.5dvh, 30px);
+  font-size: clamp(15px, 1.5svh, 30px);
   max-width: 640px;
   margin-bottom: var(--sp-8);
 }
@@ -945,7 +948,7 @@ footer {
 @media (max-width: 800px) {
   .nav-links {
     position: fixed;
-    top: 72px;
+    top: var(--header-h);
     left: 0;
     right: 0;
     bottom: 0;
