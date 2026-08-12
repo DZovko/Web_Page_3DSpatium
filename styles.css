@@ -12,7 +12,7 @@
   --shadow: 0 24px 60px -30px rgba(35, 34, 32, 0.22);
   --serif: "Serif", serif;
   --sans: "Open Sans", sans-serif;
-  --maxw: 1140px;
+  --maxw: 1600px;
   --gutter: 24px;
 
   --sp-1: 4px;
@@ -45,11 +45,14 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 16.5px;
+  font-size: 20px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   position: relative;
   overflow-x: hidden;
+}
+main {
+  font-size: 20px;
 }
 body::before {
   content: "";
@@ -136,7 +139,7 @@ em {
   align-items: center;
   gap: 8px;
   font-family: var(--sans);
-  font-size: 0.8em;
+  font-size: 0.9em;
   letter-spacing: 0.14em;
   color: var(--brand);
   font-weight: 500;
@@ -231,7 +234,7 @@ nav.wrap {
   color: var(--paper);
 }
 .btn-primary:hover {
-  background: var(--ink-soft);
+  background: var(--brand);
   color: var(--paper-deep)
 }
 .btn-secondary {
@@ -239,7 +242,8 @@ nav.wrap {
   color: var(--ink);
 }
 .btn-secondary:hover {
-  background: var(--paper);
+  background: var(--brand);
+  color: var(--paper);
 }
 .btn-ghost {
   color: var(--ink-soft);
@@ -299,7 +303,7 @@ nav.wrap {
   position: relative;
   padding-top: var(--header-h);
   height: var(--hero-h);
-  background-image: url("slike/glavna.jpeg");
+  background-image: url("slike/glavna.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -369,7 +373,6 @@ section {
 }
 .section-head {
   font-size: clamp(15px, 1.5svh, 30px);
-  max-width: 640px;
   margin-bottom: var(--sp-8);
 }
 .section-head h2 {
@@ -388,41 +391,6 @@ section {
 /* ---------- STO RADIMO ---------- */
 .usluge {
   padding: var(--sp-9) 0;
-}
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--sp-5);
-}
-.feature-card {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: var(--sp-7) var(--sp-6);
-}
-.feature-card .fi {
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
-  background: var(--paper-deep);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: var(--sp-5);
-}
-.feature-card .fi svg {
-  width: 19px;
-  height: 19px;
-  stroke: var(--brand);
-}
-.feature-card h3 {
-  font-size: 17px;
-  margin-bottom: var(--sp-2);
-  font-weight: 500;
-}
-.feature-card p {
-  font-size: 14.5px;
-  color: var(--ink-soft);
 }
 
 /* ---------- PORTFOLIO ---------- */
@@ -501,6 +469,23 @@ section {
   transition-delay: 400ms;
 }
 
+/* ---------- KARTICE ---------- */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--sp-7) var(--sp-6);
+}
+.card h3 {
+  font-size: 1em;
+  margin-bottom: var(--sp-2);
+  font-weight: 500;
+}
+.card p {
+  font-size: 0.9em;
+  color: var(--ink-soft);
+}
+
 /* ---------- PROCES ---------- */
 .proces {
   padding: var(--sp-9) 0;
@@ -511,27 +496,12 @@ section {
   gap: var(--sp-5);
   margin-bottom: var(--sp-6);
 }
-.proces-card {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: var(--sp-7) var(--sp-6);
-}
 .proces-num {
   font-family: var(--serif);
-  font-size: 28px;
+  font-size: 1.5em;
   color: var(--brand);
   display: block;
   margin-bottom: var(--sp-4);
-}
-.proces-card h3 {
-  font-size: 17px;
-  margin-bottom: var(--sp-2);
-  font-weight: 500;
-}
-.proces-card p {
-  font-size: 14.5px;
-  color: var(--ink-soft);
 }
 .proces-note {
   font-size: 14px;
@@ -553,15 +523,25 @@ section {
 .onama-head {
   margin-bottom: 0;
 }
-.onama-head p {
-  color: var(--ink-soft);
-  margin-top: var(--sp-4);
-  max-width: 44ch;
-}
 .onama-cards {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--sp-4);
+}
+.onama .card .fi {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: var(--paper-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--sp-5);
+}
+.onama .card .fi svg {
+  width: 19px;
+  height: 19px;
+  stroke: var(--brand);
 }
 
 /* ---------- FAQ ---------- */
@@ -569,7 +549,7 @@ section {
   padding: var(--sp-9) 0;
 }
 .faq-list {
-  max-width: 760px;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
   gap: var(--sp-3);
@@ -582,7 +562,7 @@ section {
 }
 .faq-item summary {
   font-family: var(--sans);
-  font-size: 15.5px;
+  font-size: 1em;
   font-weight: 500;
   cursor: pointer;
   list-style: none;
@@ -597,7 +577,7 @@ section {
 .faq-item summary::after {
   content: "+";
   font-family: var(--serif);
-  font-size: 22px;
+  font-size: 1.5em;
   color: var(--brand);
   flex-shrink: 0;
   transition: transform 0.2s ease;
@@ -606,10 +586,10 @@ section {
   transform: rotate(45deg);
 }
 .faq-item p {
-  font-size: 14.5px;
+  font-size: 0.8em;
   color: var(--ink-soft);
   margin-top: var(--sp-4);
-  max-width: 62ch;
+  max-width: 750px;
 }
 
 /* ---------- KONTAKT ---------- */
