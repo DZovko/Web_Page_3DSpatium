@@ -484,7 +484,7 @@ section {
 }
 .proces-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--sp-5);
   margin-bottom: var(--sp-6);
 }
@@ -886,6 +886,14 @@ footer {
 }
 
 /* ---------- RESPONSIVE ---------- */
+/* Four process steps stay readable only while each column is wide enough; below this
+   they pair up 2x2 before collapsing to a single column at 900px. */
+@media (max-width: 1150px) {
+  .proces-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 900px) {
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
