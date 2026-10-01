@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/dspatiumhr/public_html/
+    - export DEPLOYPATH=/home/dspatiumhr/staging.3dspatium.hr/
 
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp styles.css $DEPLOYPATH
