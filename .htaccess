@@ -1,3 +1,3 @@
 <IfModule mod_headers.c>
-    Header set X-Robots_tag "noindex, nofollow"
+    Header set X-Robots-Tag "noindex, nofollow"
 </IfModule>
