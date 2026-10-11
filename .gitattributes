@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Skip .cpanel.yml and .htaccess on merges
+.cpanel.yml merge=ours
+.htaccess merge=ours
