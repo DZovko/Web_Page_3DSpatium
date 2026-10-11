@@ -9,3 +9,4 @@ deployment:
     - /bin/cp -R slike $DEPLOYPATH
     - /bin/cp robots.txt $DEPLOYPATH
     - /bin/cp sitemap.xml $DEPLOYPATH
+    - /bin/cp .htaccess $DEPLOYPATH
