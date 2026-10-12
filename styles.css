@@ -203,6 +203,16 @@ nav.wrap {
   display: flex;
   align-items: center;
   gap: 20px;
+  max-height: var(--header-h);
+}
+.nav-cta img{
+  max-height: calc(var(--header-h)*0.5);
+}
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .btn {
