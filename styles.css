@@ -207,6 +207,7 @@ nav.wrap {
 }
 .nav-cta img{
   max-height: calc(var(--header-h)*0.5);
+  height: calc(var(--header-h)*0.5);
 }
 .center {
   position: absolute;
@@ -699,9 +700,10 @@ section {
   justify-content: center;
 }
 .kinfo-ic svg {
-  width: 16px;
-  height: 16px;
+  width: 80%;
+  height: 80%;
   stroke: var(--brand);
+  color: var(--brand);
 }
 .kinfo-label {
   font-size: 12px;
