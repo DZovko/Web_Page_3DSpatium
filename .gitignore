@@ -1,2 +1,11 @@
 slike/temp/
 .vscode/
+
+# Local credentials and environment overrides; keep example templates versionable.
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Generated staging release archives and external integrity manifests.
+/artifacts/

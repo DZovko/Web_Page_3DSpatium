@@ -96,6 +96,10 @@ if (reveals.length) {
         el.classList.add("pending");
         io.observe(el);
       });
+      window.spatiumObserveGallery = (root) => root.querySelectorAll(".reveal").forEach((el) => {
+        el.classList.add("pending");
+        io.observe(el);
+      });
     } catch (err) {
       reveals.forEach((el) => el.classList.add("in"));
     }
@@ -114,6 +118,7 @@ const closeGalleryBtn = document.getElementById("closeGallery");
 const prevBtn = document.getElementById("prevGallery");
 const nextBtn = document.getElementById("nextGallery");
 const portfolioImages = document.querySelectorAll(".pf-img img");
+const portfolioGrid = document.querySelector(".portfolio-grid");
 
 if (
   galleryModal &&
@@ -126,64 +131,81 @@ if (
   let currentGalleryImages = [];
   let currentImageIndex = 0;
   let currentAltText = "";
+  let currentPhotographs = [];
   let lastFocusedTrigger = null;
   let openTimer;
   let closeTimer;
 
   function updateModalView() {
+    modalImg.hidden = false;
     modalImg.src = currentGalleryImages[currentImageIndex];
     // Keep the alt text meaningful per-image instead of the static markup default
-    modalImg.alt = currentAltText;
+    const photograph = currentPhotographs[currentImageIndex];
+    modalImg.alt = photograph?.alt || currentAltText;
+    const caption = photograph?.caption || photograph?.alt || currentAltText;
     if (currentGalleryImages.length > 1) {
-      modalCaption.textContent = `${currentAltText} (${currentImageIndex + 1} / ${currentGalleryImages.length})`;
+      modalCaption.textContent = `${caption} (${currentImageIndex + 1} / ${currentGalleryImages.length})`;
       prevBtn.style.display = "block";
       nextBtn.style.display = "block";
     } else {
-      modalCaption.textContent = currentAltText;
+      modalCaption.textContent = caption;
       prevBtn.style.display = "none";
       nextBtn.style.display = "none";
     }
   }
 
+  modalImg.addEventListener("error", () => {
+    modalImg.hidden = true;
+    modalCaption.textContent = `Fotografija trenutačno nije dostupna. ${modalCaption.textContent}`;
+  });
+  modalImg.addEventListener("load", () => { modalImg.hidden = false; });
+
   portfolioImages.forEach((img) => {
     img.setAttribute("role", "button");
     img.tabIndex = 0;
-    img.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        img.click();
-      }
-    });
-    img.addEventListener("click", () => {
-      const src = img.getAttribute("src");
-      if (!src) return; // nothing to show — bad markup, fail quietly instead of breaking the modal
+  });
+  // Delegate to the existing grid so asynchronously loaded cards work too.
+  portfolioGrid?.addEventListener("keydown", (e) => {
+    const img = e.target.closest(".pf-img img");
+    if (!img) return;
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      img.click();
+    }
+  });
+  portfolioGrid?.addEventListener("click", (e) => {
+    const img = e.target.closest(".pf-img img");
+    if (!img) return;
+    const src = img.getAttribute("src");
+    if (!src) return; // nothing to show — bad markup, fail quietly instead of breaking the modal
 
-      currentGalleryImages = [src];
-      const extraData = img.getAttribute("data-extra");
-      if (extraData) {
-        const extras = extraData
-          .split(",")
-          .map((p) => p.trim())
-          .filter(Boolean);
-        currentGalleryImages = currentGalleryImages.concat(extras);
-      }
-      currentImageIndex = 0;
-      currentAltText = img.alt || "Prikaz portfolija";
-      lastFocusedTrigger = img;
+    currentGalleryImages = [src];
+    const extraData = img.getAttribute("data-extra");
+    if (extraData) {
+      const extras = extraData
+        .split(",")
+        .map((p) => p.trim())
+        .filter(Boolean);
+      currentGalleryImages = currentGalleryImages.concat(extras);
+    }
+    currentImageIndex = 0;
+    currentAltText = img.alt || "Prikaz portfolija";
+    currentPhotographs = img.galleryPhotographs || [];
+    if (currentPhotographs.length) currentGalleryImages = currentPhotographs.map((photo) => photo.src);
+    lastFocusedTrigger = img;
 
-      updateModalView();
+    updateModalView();
 
-      clearTimeout(closeTimer);
-      clearTimeout(openTimer);
-      galleryModal.style.display = "flex";
-      galleryModal.removeAttribute("inert");
-      galleryModal.setAttribute("aria-hidden", "false");
-      openTimer = setTimeout(() => {
-        galleryModal.classList.add("show");
-      }, 10);
-      document.body.style.overflow = "hidden";
-      closeGalleryBtn.focus();
-    });
+    clearTimeout(closeTimer);
+    clearTimeout(openTimer);
+    galleryModal.style.display = "flex";
+    galleryModal.removeAttribute("inert");
+    galleryModal.setAttribute("aria-hidden", "false");
+    openTimer = setTimeout(() => {
+      galleryModal.classList.add("show");
+    }, 10);
+    document.body.style.overflow = "hidden";
+    closeGalleryBtn.focus();
   });
 
   function showNextImage() {

@@ -1,0 +1,222 @@
+{
+  "version": 1,
+  "projectId": "abufysa8",
+  "dataset": "production",
+  "projects": [
+    {
+      "sourceKey": "static-gallery/projekt1",
+      "documentId": "gallery-import-projekt1",
+      "title": "Stambena zgrada",
+      "location": "PAG",
+      "category": "Stambena zgrada",
+      "displayOrder": 10,
+      "photographs": [
+        {
+          "_key": "photo-1",
+          "sourcePath": "slike/projekt1/1.webp",
+          "alt": "Stambena zgrada",
+          "sha1": "fb373772a9eead13e924217411c0771639366f11",
+          "bytes": 185552
+        },
+        {
+          "_key": "photo-2",
+          "sourcePath": "slike/projekt1/2.webp",
+          "alt": "Stambena zgrada",
+          "sha1": "0302ce64038af634cfbd0d31cc2c4ca53f65de45",
+          "bytes": 132300
+        },
+        {
+          "_key": "photo-3",
+          "sourcePath": "slike/projekt1/3.webp",
+          "alt": "Stambena zgrada",
+          "sha1": "7b24c4c745c0561957dd826f57f5b9b2697423d6",
+          "bytes": 150928
+        },
+        {
+          "_key": "photo-4",
+          "sourcePath": "slike/projekt1/4.webp",
+          "alt": "Stambena zgrada",
+          "sha1": "559cfc73f4d3e195a11621f385fc7a9aa64cc9e7",
+          "bytes": 125762
+        }
+      ]
+    },
+    {
+      "sourceKey": "static-gallery/projekt2",
+      "documentId": "gallery-import-projekt2",
+      "title": "Poslovna zgrada",
+      "location": "ZAGREB",
+      "category": "Poslovna zgrada",
+      "displayOrder": 20,
+      "photographs": [
+        {
+          "_key": "photo-1",
+          "sourcePath": "slike/projekt2/1.webp",
+          "alt": "Poslovna zgrada",
+          "sha1": "b144cfdb031e1ce904ab5f420b7438c13a73c00f",
+          "bytes": 174058
+        },
+        {
+          "_key": "photo-2",
+          "sourcePath": "slike/projekt2/2.webp",
+          "alt": "Poslovna zgrada",
+          "sha1": "07a94915f8e755c5aaa5b9f93bdbad5b562b5482",
+          "bytes": 172560
+        },
+        {
+          "_key": "photo-3",
+          "sourcePath": "slike/projekt2/3.webp",
+          "alt": "Poslovna zgrada",
+          "sha1": "d181f554d7dd57168624bd5cdb6265486b42f925",
+          "bytes": 118590
+        },
+        {
+          "_key": "photo-4",
+          "sourcePath": "slike/projekt2/4.webp",
+          "alt": "Poslovna zgrada",
+          "sha1": "a101ba1afc59c518549523a0706088eaa20327b2",
+          "bytes": 156156
+        },
+        {
+          "_key": "photo-5",
+          "sourcePath": "slike/projekt2/5.webp",
+          "alt": "Poslovna zgrada",
+          "sha1": "e2e3a45991572e77c5515a76707f79b0965d1d7d",
+          "bytes": 150830
+        },
+        {
+          "_key": "photo-6",
+          "sourcePath": "slike/projekt2/6.webp",
+          "alt": "Poslovna zgrada",
+          "sha1": "c62cb7231b76c6e881c221de3b91dbdeda794bd4",
+          "bytes": 88652
+        },
+        {
+          "_key": "photo-7",
+          "sourcePath": "slike/projekt2/7.webp",
+          "alt": "Poslovna zgrada",
+          "sha1": "046637221d8a19fe3b7b067147872055eb3a367d",
+          "bytes": 140842
+        },
+        {
+          "_key": "photo-8",
+          "sourcePath": "slike/projekt2/8.webp",
+          "alt": "Poslovna zgrada",
+          "sha1": "78f4c23f6dc2d67dc82bda379159dce88507d8b0",
+          "bytes": 136348
+        }
+      ]
+    },
+    {
+      "sourceKey": "static-gallery/projekt3",
+      "documentId": "gallery-import-projekt3",
+      "title": "Obiteljska kuća",
+      "location": "OSIJEK",
+      "category": "Obiteljska kuća",
+      "displayOrder": 30,
+      "photographs": [
+        {
+          "_key": "photo-1",
+          "sourcePath": "slike/projekt3/1.webp",
+          "alt": "Obiteljska kuća",
+          "sha1": "8212bdb0aa5361ec84447ba8beece94731c81947",
+          "bytes": 218988
+        },
+        {
+          "_key": "photo-2",
+          "sourcePath": "slike/projekt3/2.webp",
+          "alt": "Obiteljska kuća",
+          "sha1": "d0ebd7d3b400e032728fbc33d2dd276b848d0fd8",
+          "bytes": 117164
+        },
+        {
+          "_key": "photo-3",
+          "sourcePath": "slike/projekt3/3.webp",
+          "alt": "Obiteljska kuća",
+          "sha1": "dcaa3603e3a83c62617f879399c330a42fe1a095",
+          "bytes": 89334
+        },
+        {
+          "_key": "photo-4",
+          "sourcePath": "slike/projekt3/4.webp",
+          "alt": "Obiteljska kuća",
+          "sha1": "dbbcd90a5e9a784d27dce1542485284a6c84f225",
+          "bytes": 67636
+        },
+        {
+          "_key": "photo-5",
+          "sourcePath": "slike/projekt3/5.webp",
+          "alt": "Obiteljska kuća",
+          "sha1": "14cf7778e357742f0d4d076760586e2c1748a2ae",
+          "bytes": 47328
+        },
+        {
+          "_key": "photo-6",
+          "sourcePath": "slike/projekt3/6.webp",
+          "alt": "Obiteljska kuća",
+          "sha1": "41733d2cedf1bdc761eeac7c415b198b9619fdfa",
+          "bytes": 79900
+        },
+        {
+          "_key": "photo-7",
+          "sourcePath": "slike/projekt3/7.webp",
+          "alt": "Obiteljska kuća",
+          "sha1": "f1f39a65da9d28a7cdb681f30681e439b18d4466",
+          "bytes": 168704
+        },
+        {
+          "_key": "photo-8",
+          "sourcePath": "slike/projekt3/8.webp",
+          "alt": "Obiteljska kuća",
+          "sha1": "5f2bc176bc24cbbe234ed8a8a9e7068de2079482",
+          "bytes": 126984
+        },
+        {
+          "_key": "photo-9",
+          "sourcePath": "slike/projekt3/9.webp",
+          "alt": "Obiteljska kuća",
+          "sha1": "a6493c9234d7fd56fbf62afca6689e65e8b8223d",
+          "bytes": 295498
+        }
+      ]
+    },
+    {
+      "sourceKey": "static-gallery/projekt4",
+      "documentId": "gallery-import-projekt4",
+      "title": "Obiteljska kuća",
+      "location": "OSIJEK",
+      "category": "Obiteljska kuća",
+      "displayOrder": 40,
+      "photographs": [
+        {
+          "_key": "photo-1",
+          "sourcePath": "slike/projekt4/1.webp",
+          "alt": "Obiteljska kuća",
+          "sha1": "c654dd5f1b201e35a08261d2521df1beeda90009",
+          "bytes": 292354
+        },
+        {
+          "_key": "photo-2",
+          "sourcePath": "slike/projekt4/2.webp",
+          "alt": "Obiteljska kuća",
+          "sha1": "6bad3220204f897d3d0c38d4375b67f9569e2c44",
+          "bytes": 126356
+        },
+        {
+          "_key": "photo-3",
+          "sourcePath": "slike/projekt4/3.webp",
+          "alt": "Obiteljska kuća",
+          "sha1": "307cc8d7a01aba7f3b94ca7fa8187148854afa08",
+          "bytes": 78474
+        },
+        {
+          "_key": "photo-4",
+          "sourcePath": "slike/projekt4/4.webp",
+          "alt": "Obiteljska kuća",
+          "sha1": "7a359a067421aa667eaa2b2ff48c69a9a81607a4",
+          "bytes": 53796
+        }
+      ]
+    }
+  ]
+}
