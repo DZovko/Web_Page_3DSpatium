@@ -11,13 +11,7 @@
       content="Uvjeti korištenja web stranice 3D Spatium."
     />
     <meta name="robots" content="noindex, follow" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="styles.css?v=2.5" />
   </head>
   <body>
     <header>
@@ -29,7 +23,7 @@
           </div>
         </a>
         <ul class="nav-links" id="navLinks">
-          <li><a href="/#usluge">Što radimo</a></li>
+          <li><a href="/#onama">Što radimo</a></li>
           <li><a href="/#portfolio">Portfolio</a></li>
           <li><a href="/#kontakt">Kontakt</a></li>
           <li class="nav-cta-mobile">
@@ -43,6 +37,7 @@
             id="menuToggle"
             aria-label="Otvori izbornik"
             aria-expanded="false"
+            aria-controls="navLinks"
           >
             <span></span><span></span><span></span>
           </button>
@@ -150,6 +145,6 @@
     <!-- Same shared script as index.html — internally guarded (null-checks) so the
          gallery/contact-form code that doesn't exist on this page is simply skipped
          instead of throwing. Keeps nav/menu behavior in exactly one place. -->
-    <script src="myscript.js"></script>
+    <script src="myscript.js?v=2.4"></script>
   </body>
 </html>

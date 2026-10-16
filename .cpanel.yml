@@ -4,8 +4,11 @@ deployment:
     - export DEPLOYPATH=/home/dspatiumhr/public_html/
 
     - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp privatnost.html $DEPLOYPATH
+    - /bin/cp uvjeti.html $DEPLOYPATH
     - /bin/cp styles.css $DEPLOYPATH
     - /bin/cp myscript.js $DEPLOYPATH
     - /bin/cp -R slike $DEPLOYPATH
     - /bin/cp robots.txt $DEPLOYPATH
     - /bin/cp sitemap.xml $DEPLOYPATH
+    - /bin/cp .htaccess $DEPLOYPATH

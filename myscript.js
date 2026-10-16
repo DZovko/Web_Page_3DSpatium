@@ -15,30 +15,55 @@ if (menuToggle && navLinks && navBackdrop) {
     document.body.style.overflow = "hidden";
     // Move focus into the menu for keyboard/screen-reader users
     const firstLink = navLinks.querySelector("a");
-    if (firstLink) firstLink.focus();
+    // Allow the visibility transition to start before focusing a hidden link.
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      if (firstLink && navLinks.classList.contains("open")) {
+        firstLink.focus({ preventScroll: true });
+      }
+    }));
   }
-  function closeMenu() {
+  function closeMenu(restoreFocus = false) {
     navLinks.classList.remove("open");
     menuToggle.classList.remove("open");
     navBackdrop.classList.remove("open");
     menuToggle.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
+    if (restoreFocus) menuToggle.focus();
   }
   menuToggle.addEventListener("click", () => {
-    navLinks.classList.contains("open") ? closeMenu() : openMenu();
+    navLinks.classList.contains("open") ? closeMenu(true) : openMenu();
   });
-  navBackdrop.addEventListener("click", closeMenu);
+  navBackdrop.addEventListener("click", () => closeMenu(true));
   navLinks
     .querySelectorAll("a")
-    .forEach((a) => a.addEventListener("click", closeMenu));
+    .forEach((a) => a.addEventListener("click", () => closeMenu()));
+  let mobileMenu = window.innerWidth <= 800;
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 800) closeMenu();
+    const isMobile = window.innerWidth <= 800;
+    if (isMobile !== mobileMenu) {
+      // Breakpoint changes must not animate a closed desktop menu into view.
+      navLinks.style.transition = "none";
+      void navLinks.offsetWidth;
+      navLinks.style.transition = "";
+      mobileMenu = isMobile;
+    }
+    if (!isMobile && navLinks.classList.contains("open")) closeMenu();
   });
   // ESC closes the mobile menu too, not just the gallery modal
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && navLinks.classList.contains("open")) {
-      closeMenu();
-      menuToggle.focus();
+    if (!navLinks.classList.contains("open")) return;
+    if (e.key === "Escape") {
+      closeMenu(true);
+    }
+    if (e.key === "Tab") {
+      const links = Array.from(navLinks.querySelectorAll("a"));
+      const controls = [...links, menuToggle];
+      const current = controls.indexOf(document.activeElement);
+      const next = current < 0
+        ? (e.shiftKey ? controls.length - 1 : 0)
+        : (current + (e.shiftKey ? -1 : 1) + controls.length) % controls.length;
+      e.preventDefault();
+      controls[next].focus();
     }
   });
 }
@@ -50,10 +75,8 @@ if (footYear) {
 }
 
 // Scroll reveal
-// Guarded: if IntersectionObserver isn't supported (very old browsers) or
-// something above throws, we still reveal everything immediately instead of
-// leaving content permanently invisible. A <noscript> CSS rule in styles.css
-// covers the "JS never runs at all" case.
+// Content is visible by default. Hide it for animation only after this script
+// has loaded and an observer is available.
 const reveals = document.querySelectorAll(".reveal");
 if (reveals.length) {
   if ("IntersectionObserver" in window) {
@@ -69,7 +92,10 @@ if (reveals.length) {
         },
         { threshold: 0.15 },
       );
-      reveals.forEach((el) => io.observe(el));
+      reveals.forEach((el) => {
+        el.classList.add("pending");
+        io.observe(el);
+      });
     } catch (err) {
       reveals.forEach((el) => el.classList.add("in"));
     }
@@ -101,6 +127,8 @@ if (
   let currentImageIndex = 0;
   let currentAltText = "";
   let lastFocusedTrigger = null;
+  let openTimer;
+  let closeTimer;
 
   function updateModalView() {
     modalImg.src = currentGalleryImages[currentImageIndex];
@@ -118,6 +146,14 @@ if (
   }
 
   portfolioImages.forEach((img) => {
+    img.setAttribute("role", "button");
+    img.tabIndex = 0;
+    img.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        img.click();
+      }
+    });
     img.addEventListener("click", () => {
       const src = img.getAttribute("src");
       if (!src) return; // nothing to show — bad markup, fail quietly instead of breaking the modal
@@ -137,9 +173,12 @@ if (
 
       updateModalView();
 
+      clearTimeout(closeTimer);
+      clearTimeout(openTimer);
       galleryModal.style.display = "flex";
+      galleryModal.removeAttribute("inert");
       galleryModal.setAttribute("aria-hidden", "false");
-      setTimeout(() => {
+      openTimer = setTimeout(() => {
         galleryModal.classList.add("show");
       }, 10);
       document.body.style.overflow = "hidden";
@@ -170,9 +209,13 @@ if (
   });
 
   function closeGallery() {
+    clearTimeout(openTimer);
+    clearTimeout(closeTimer);
     galleryModal.classList.remove("show");
+    // Keep fading controls out of the tab order after focus returns below.
+    galleryModal.setAttribute("inert", "");
     galleryModal.setAttribute("aria-hidden", "true");
-    setTimeout(() => {
+    closeTimer = setTimeout(() => {
       galleryModal.style.display = "none";
       document.body.style.overflow = "";
     }, 300);
@@ -198,8 +241,8 @@ if (
 
   // Basic focus trap: keep Tab cycling within the modal's controls while open
   galleryModal.addEventListener("keydown", (e) => {
-    if (!galleryModal.classList.contains("show") || e.key !== "Tab") return;
-    const focusable = [prevBtn, nextBtn, closeGalleryBtn].filter(
+    if (galleryModal.getAttribute("aria-hidden") === "true" || e.key !== "Tab") return;
+    const focusable = [closeGalleryBtn, prevBtn, nextBtn].filter(
       (el) => el.offsetParent !== null,
     );
     if (!focusable.length) return;
@@ -232,6 +275,7 @@ const submitBtn = document.getElementById("submit-btn");
 if (form && status && submitBtn) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    if (submitBtn.disabled) return;
 
     // Honeypot check: if the hidden "_gotcha" field got filled in, it's almost certainly a bot.
     // Silently pretend success instead of submitting, so bots don't learn to adapt.
@@ -249,7 +293,7 @@ if (form && status && submitBtn) {
     const data = new FormData(form);
 
     try {
-      const response = await fetch("https://formspree.io/f/meeydqgd", {
+      const response = await fetch(form.action, {
         method: "POST",
         body: data,
         headers: {
