@@ -1,3 +1,8 @@
+# Keep staging out of search results without blocking the production domain.
+<IfModule mod_setenvif.c>
+    SetEnvIfNoCase Host "^staging\.3dspatium\.hr(?::[0-9]+)?$" staging_site
+</IfModule>
 <IfModule mod_headers.c>
-    Header set X-Robots-Tag "noindex, nofollow"
+    Header set X-Robots-Tag "noindex, nofollow" env=staging_site
+    Header set X-Content-Type-Options "nosniff"
 </IfModule>

@@ -12,7 +12,7 @@
       name="description"
       content="Izrađujemo fotorealistične 3D vizualizacije, rendere kuća i stanova, interijere, eksterijere i virtualne šetnje. Studio iz Osijeka."
     />
-    <link rel="stylesheet" href="styles.css?v=2.1" />
+    <link rel="stylesheet" href="styles.css?v=2.4" />
     <!-- If JS is unavailable, .reveal elements must not stay invisible forever (see styles.css) -->
     <noscript>
       <style>
@@ -23,12 +23,6 @@
       </style>
     </noscript>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet.css"
-    />
 
     <!-- SEO -->
     <meta name="geo.region" content="HR-14" />
@@ -46,10 +40,9 @@
       property="og:description"
       content="Izrađujemo fotorealistične 3D rendere i virtualne šetnje kroz vaš budući prostor. Arhitektonska vizualizacija po mjeri, brzo i povoljno."
     />
-    <!-- IMAGE-PENDING: og-image.jpg must exist at 1200x630px minimum before launch -->
     <meta
       property="og:image"
-      content="https://3dspatium.hr/slike/og-image.jpg"
+      content="https://3dspatium.hr/slike/glavna.jpg"
     />
     <meta property="og:url" content="https://3dspatium.hr/" />
     <meta property="og:locale" content="hr_HR" />
@@ -64,7 +57,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://3dspatium.hr/slike/og-image.jpg"
+      content="https://3dspatium.hr/slike/glavna.jpg"
     />
 
     <script type="application/ld+json">
@@ -191,6 +184,7 @@
   <body  id="top">
     <header>
       <nav class="wrap">
+        <a href="#top" class="logo">
           <div class="logo-text">
             <img
               src="slike/favicon.svg"
@@ -217,6 +211,7 @@
             id="menuToggle"
             aria-label="Otvori izbornik"
             aria-expanded="false"
+            aria-controls="navLinks"
           >
             <span></span><span></span><span></span>
           </button>
@@ -228,7 +223,7 @@
     <main>
       <!-- HERO -->
       <section class="hero">
-          <img class="hero-bg", src="slike/glavna.jpg" fetchpriority="high">
+          <img class="hero-bg" src="slike/glavna.jpg" alt="" fetchpriority="high">
           <div class="hero-content-bg">
             <img src="slike/logo-pozadina-alt.svg" alt="Logo" fetchpriority="high">
           </div>
@@ -248,7 +243,6 @@
               <a href="#portfolio" class="btn btn-secondary">Pogledaj portfolio</a>
             </div>
           </div>
-        </div>
       </section>
 
       <!-- PORTFOLIO — moved directly under hero: proof before claims -->
@@ -262,14 +256,13 @@
               klijentom od prve ideje do finalnog rendera.
             </p>
           </div>
-          <!-- IMAGE-PENDING: placeholder images below (favicon reused) until client delivers real renders -->
           <div class="portfolio-grid">
             
             <div class="pf-card reveal">
               <div class="pf-img">
                 <img
-                  src="slike/projekt4/obiteljska kuca retfala 4.jpeg"
-                  data-extra="slike/projekt4/obiteljska kuca retfala 2.jpeg,slike/projekt4/obiteljska kuca retfala 3.jpeg, slike/projekt4/obiteljska kuca retfala.jpeg"
+                  src="slike/projekt1/1.webp"
+                  data-extra="slike/projekt1/2.webp, slike/projekt1/3.webp, slike/projekt1/4.webp"
                   alt="Stambena zgrada"
                   loading="lazy"
                   width="800"
@@ -277,8 +270,8 @@
                 />
               </div>
               <div class="pf-body">
-                <span class="pf-tag">Stambena zgrada</span>
-                <h3>Obiteljska kuća Retfala</h3>
+                <span class="pf-tag">PAG</span>
+                <h3>Stambena zgrada</h3>
               </div>
             </div>
             
@@ -286,25 +279,25 @@
               <div class="pf-card reveal">
               <div class="pf-img">
                 <img
-                  src="slike/projekt5/kupaonica.jpeg"
-                  data-extra=""
-                  alt="Obiteljska kuća"
+                  src="slike/projekt2/1.webp"
+                  data-extra="slike/projekt2/2.webp, slike/projekt2/3.webp, slike/projekt2/4.webp, slike/projekt2/5.webp, slike/projekt2/6.webp, slike/projekt2/7.webp, slike/projekt2/8.webp"
+                  alt="Poslovna zgrada"
                   loading="lazy"
                   width="800"
                   height="600"
                 />
               </div>
               <div class="pf-body">
-                <span class="pf-tag">Obiteljska kuća</span>
-                <h3>Kupaonica</h3>
+                <span class="pf-tag">ZAGREB</span>
+                <h3>Poslovna zgrada</h3>
               </div>
             </div>
 
 <div class="pf-card reveal">
               <div class="pf-img">
                 <img
-                  src="slike/projekt1/glavna.jpg"
-                  data-extra="slike/projekt2/glavna.jpg"
+                  src="slike/projekt3/1.webp"
+                  data-extra="slike/projekt3/2.webp, slike/projekt3/3.webp, slike/projekt3/4.webp, slike/projekt3/5.webp, slike/projekt3/6.webp, slike/projekt3/7.webp, slike/projekt3/8.webp, slike/projekt3/9.webp"
                   alt="Obiteljska kuća"
                   loading="lazy"
                   width="800"
@@ -312,8 +305,8 @@
                 />
               </div>
               <div class="pf-body">
-                <span class="pf-tag">Obiteljska kuća</span>
-                <h3>Spavaća soba</h3>
+                <span class="pf-tag">OSIJEK</span>
+                <h3>Obiteljska kuća</h3>
               </div>
             </div>
 
@@ -324,16 +317,16 @@
             <div class="pf-card reveal">
               <div class="pf-img">
                 <img
-                  src="slike/projekt3/obiteljska kuca doljnji grad.jpeg"
-                  data-extra=""
-                  alt="Stambena zgrada"
+                  src="slike/projekt4/1.webp"
+                  data-extra="slike/projekt4/2.webp, slike/projekt4/3.webp, slike/projekt4/4.webp"
+                  alt="Obiteljska kuća"
                   loading="lazy"
                   width="800"
                   height="600"
                 />
               </div>
               <div class="pf-body">
-                <span class="pf-tag">Stambena zgrada</span>
+                <span class="pf-tag">OSIJEK</span>
                 <h3>Obiteljska kuća</h3>
               </div>
             </div>
@@ -405,7 +398,7 @@
               fotorealistične 3D vizualizacije koje jasno pokazuju kako će
               prostor izgledati kada bude izveden. Svakom projektu pristupamo
               individualno, uz direktnu komunikaciju i pažnju prema svakom
-              detalju — od materijala i rasvjete do konačnog ugođaja prostora.
+              detalju od materijala i rasvjete do konačnog ugođaja prostora.
             </p>
           </div>
           <div class="onama-cards">
@@ -710,6 +703,6 @@
       >
       <div class="modal-caption" id="modalCaption"></div>
     </div>
-    <script src="myscript.js"></script>
+    <script src="myscript.js?v=2.3"></script>
   </body>
 </html>
